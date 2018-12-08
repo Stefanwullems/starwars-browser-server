@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "/home/stefan/Dev/personal/starwars-browser/starwars-browser-server/starwars-browser-server.csproj",
+  "TargetFramework": "netcoreapp2.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "MVC-2.1",
+    "LanguageVersion": "2.1",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-2.1"
+      }
+    ]
+  }
+}
