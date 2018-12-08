@@ -14,11 +14,6 @@ namespace starwars_browser_server.Requests
 
         static HttpClient client = new HttpClient();
 
-        private static void ShowPlanet(Planet planet)
-        {
-            Console.WriteLine($"Name: {planet.name}, climate: {planet.climate}");
-        }
-
         public static async Task<Planet> GetById(int id)
         {
             HttpClient client = PrepareClient();
@@ -30,7 +25,6 @@ namespace starwars_browser_server.Requests
                 {
                     planet = await response.Content.ReadAsAsync<Planet>();
                 }
-                ShowPlanet(planet);
                 return planet;
             }
             catch (Exception ex)
