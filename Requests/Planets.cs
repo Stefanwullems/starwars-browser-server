@@ -12,9 +12,9 @@ namespace starwars_browser_server.Requests
 
         private static string baseUrl = "https://swapi.co/api/planets/";
 
-        static HttpClient client = new HttpClient();
+        HttpClient client = new HttpClient();
 
-        public static async Task<Planet> GetById(int id)
+        public async Task<Planet> GetById(int id)
         {
             HttpClient client = PrepareClient();
             Planet planet = null;
@@ -34,7 +34,7 @@ namespace starwars_browser_server.Requests
             }
         }
 
-        private static HttpClient PrepareClient()
+        private HttpClient PrepareClient()
         {
             // Update port # in the following line.
             client.BaseAddress = new Uri("http://localhost:64195/");
