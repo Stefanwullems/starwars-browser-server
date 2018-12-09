@@ -25,7 +25,9 @@ namespace starwars_browser_server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +41,9 @@ namespace starwars_browser_server
             {
                 app.UseHsts();
             }
+
+            app.UseCors(builder =>
+       builder.WithOrigins("http://localhost:3000"));
 
             app.UseHttpsRedirection();
             app.UseMvc();
