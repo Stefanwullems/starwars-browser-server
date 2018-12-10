@@ -1,7 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace starwars_browser_server.Models
 {
-    public class Planet
+    public class PlanetItem
     {
+        public int id { get; set; }
         public string name { get; set; }
         public string climate { get; set; }
         public string rotation_period { get; set; }
@@ -13,6 +16,14 @@ namespace starwars_browser_server.Models
         public string population { get; set; }
         public string[] residents { get; set; }
         public string[] films { get; set; }
+    }
+
+    public class PlanetContext : DbContext
+    {
+        public PlanetContext(DbContextOptions<PlanetContext> options) : base(options)
+        {
+        }
+        public DbSet<PlanetItem> Planets { get; set; }
     }
 
 

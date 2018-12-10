@@ -9,12 +9,22 @@ namespace starwars_browser_server.Controllers
     [ApiController]
     public class PlanetsController : ControllerBase
     {
-        private PlanetRequest _planetRequest = new PlanetRequest();
+
+        private readonly PlanetContext _context;
+        public PlanetsController(PlanetContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet("{id}")]
-        public ActionResult<Planet> getPlanetById(int id)
+        public ActionResult<PlanetItem> getPlanetById(int id)
         {
-            return _planetRequest.GetById(id).GetAwaiter().GetResult();
+            PlanetItem planet = _context.Planets.Find(id);
+            if (planet == null)
+            {
+                return NotFound();
+            }
+            return planet;
         }
     }
 }

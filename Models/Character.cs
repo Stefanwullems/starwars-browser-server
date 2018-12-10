@@ -1,7 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace starwars_browser_server.Models
 {
-    public class Character
+    public class CharacterItem
     {
+        public int id { get; set; }
         public string name { get; set; }
         public string birth_year { get; set; }
         public string eye_color { get; set; }
@@ -16,4 +19,13 @@ namespace starwars_browser_server.Models
         public string[] starships { get; set; }
         public string[] vehicles { get; set; }
     }
+
+    public class CharacterContext : DbContext
+    {
+        public CharacterContext(DbContextOptions<CharacterContext> options) : base(options)
+        {
+        }
+        public DbSet<CharacterItem> Characters { get; set; }
+    }
+
 }

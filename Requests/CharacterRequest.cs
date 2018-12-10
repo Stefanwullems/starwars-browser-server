@@ -13,15 +13,15 @@ namespace starwars_browser_server.Requests
         string baseUrl = "https://swapi.co/api/people/";
         private HttpClient client = PreparedClient.GetClient();
 
-        public async Task<Character> getById(int id)
+        public async Task<CharacterItem> GetById(int id)
         {
-            Character character = null;
+            CharacterItem character = null;
             HttpResponseMessage res = await client.GetAsync(baseUrl + id);
             try
             {
                 if (res.IsSuccessStatusCode)
                 {
-                    character = await res.Content.ReadAsAsync<Character>();
+                    character = await res.Content.ReadAsAsync<CharacterItem>();
                     return character;
                 }
                 return character;
@@ -32,7 +32,6 @@ namespace starwars_browser_server.Requests
                 return null;
             }
         }
-
 
     }
 }
