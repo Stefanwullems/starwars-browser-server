@@ -11,6 +11,10 @@ namespace starwars_browser_server.Models
         public string terrain { get; set; }
         public string surface_water { get; set; }
         public string population { get; set; }
+        public string[] residents { get; set; }
+        public string[] films { get; set; }
     }
+
+
 
 }

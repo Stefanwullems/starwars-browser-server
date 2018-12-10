@@ -5,16 +5,18 @@ using starwars_browser_server.Requests;
 
 namespace starwars_browser_server.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
-    public class PlanetsController : ControllerBase
+    public class CharactersController : ControllerBase
     {
-        private PlanetRequest _planetRequest = new PlanetRequest();
+
+        private CharacterRequest _characterRequest = new CharacterRequest();
 
         [HttpGet("{id}")]
-        public ActionResult<Planet> getPlanetById(int id)
+        public ActionResult<Character> GetCharacterById(int id)
         {
-            return _planetRequest.GetById(id).GetAwaiter().GetResult();
+            return _characterRequest.getById(id).GetAwaiter().GetResult();
         }
     }
 }
