@@ -15,7 +15,6 @@ namespace starwars_browser_server.Controllers
         {
             _context = context;
         }
-        private CharacterRequest _characterRequest = new CharacterRequest();
 
         [HttpGet]
         public ActionResult<CharacterItem[]> GetAll()
