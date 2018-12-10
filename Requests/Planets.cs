@@ -34,6 +34,28 @@ namespace starwars_browser_server.Requests
             }
         }
 
+        public async Task<NameAndId[]> GetNamesAndIds()
+        {
+            HttpClient client = PrepareClient();
+            NameAndId[] planets = new NameAndId[2];
+            try
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    HttpResponseMessage response = await client.GetAsync(baseUrl + (i + 1).ToString());
+                    planets[i] = await response.Content.ReadAsAsync<NameAndId>();
+                    planets[i].id = i + 1;
+
+                }
+                return planets;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return default(NameAndId[]);
+            }
+        }
+
         private HttpClient PrepareClient()
         {
             // Update port # in the following line.

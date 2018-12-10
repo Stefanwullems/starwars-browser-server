@@ -26,9 +26,9 @@ namespace starwars_browser_server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<string> Test()
+        public ActionResult<NameAndId[]> GetPlanetNamesAndIds()
         {
-            return "hi";
+            return _planetRequest.GetNamesAndIds().GetAwaiter().GetResult();
         }
     }
 }
