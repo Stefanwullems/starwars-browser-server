@@ -12,16 +12,16 @@ namespace starwars_browser_server.Requests
 
         private static string baseUrl = "https://swapi.co/api/planets/";
         private HttpClient client = PreparedClient.GetClient();
-        public async Task<Planet> GetById(int id)
+        public async Task<PlanetItem> GetById(int id)
         {
 
-            Planet planet = null;
+            PlanetItem planet = null;
             HttpResponseMessage response = await client.GetAsync(baseUrl + id);
             try
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    planet = await response.Content.ReadAsAsync<Planet>();
+                    planet = await response.Content.ReadAsAsync<PlanetItem>();
                 }
                 return planet;
             }

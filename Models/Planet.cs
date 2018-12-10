@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace starwars_browser_server.Models
 {
-    public class Planet
+    public class PlanetItem
     {
         public int id { get; set; }
         public string name { get; set; }
@@ -23,7 +23,7 @@ namespace starwars_browser_server.Models
         public PlanetContext(DbContextOptions<PlanetContext> options) : base(options)
         {
         }
-        public DbSet<Planet> Planets { get; set; }
+        public DbSet<PlanetItem> Planets { get; set; }
     }
 
 

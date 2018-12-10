@@ -13,7 +13,7 @@ namespace starwars_browser_server.Requests
         string baseUrl = "https://swapi.co/api/people/";
         private HttpClient client = PreparedClient.GetClient();
 
-        public async Task<CharacterItem> getById(int id)
+        public async Task<CharacterItem> GetById(int id)
         {
             CharacterItem character = null;
             HttpResponseMessage res = await client.GetAsync(baseUrl + id);
