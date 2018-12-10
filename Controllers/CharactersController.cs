@@ -14,7 +14,7 @@ namespace starwars_browser_server.Controllers
         private CharacterRequest _characterRequest = new CharacterRequest();
 
         [HttpGet("{id}")]
-        public ActionResult<Character> GetCharacterById(int id)
+        public ActionResult<CharacterItem> GetCharacterById(int id)
         {
             return _characterRequest.getById(id).GetAwaiter().GetResult();
         }
