@@ -11947,11 +11947,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/stefan/Dev/personal/starwars-browser/starwars-browser-server/starwars-browser-server.csproj",
+      "projectUniqueName": "/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/starwars-browser-server.csproj",
       "projectName": "starwars-browser-server",
-      "projectPath": "/home/stefan/Dev/personal/starwars-browser/starwars-browser-server/starwars-browser-server.csproj",
+      "projectPath": "/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/starwars-browser-server.csproj",
       "packagesPath": "/home/stefan/.nuget/packages/",
-      "outputPath": "/home/stefan/Dev/personal/starwars-browser/starwars-browser-server/obj/",
+      "outputPath": "/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
