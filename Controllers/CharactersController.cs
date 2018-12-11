@@ -11,7 +11,7 @@ namespace starwars_browser_server.Controllers
     public class CharactersController : ControllerBase
     {
         private readonly CharacterContext _context;
-        private readonly int _count = 86;
+        private readonly int _count = 87;
         public CharactersController(CharacterContext context)
         {
             _context = context;
@@ -23,7 +23,7 @@ namespace starwars_browser_server.Controllers
             NameAndId[] characters = new NameAndId[_count];
             NameAndId character;
             CharacterItem curr;
-            for (int i = 1; i < _count; i++)
+            for (int i = 1; i < _count + 1; i++)
             {
                 curr = _context.Characters.Find(i);
                 character = new NameAndId();
