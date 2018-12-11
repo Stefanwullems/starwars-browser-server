@@ -11,7 +11,7 @@ namespace starwars_browser_server.Controllers
     public class CharactersController : ControllerBase
     {
         private readonly CharacterContext _context;
-        private readonly int _count = 87;
+        private readonly int _count = 86;
         public CharactersController(CharacterContext context)
         {
             _context = context;
