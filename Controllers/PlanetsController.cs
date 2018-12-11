@@ -18,12 +18,22 @@ namespace starwars_browser_server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<PlanetItem[]> GetAll()
+        public ActionResult<NameAndId[]> GetAll()
         {
-            PlanetItem[] planets = new PlanetItem[_count];
+            NameAndId[] planets = new NameAndId[_count];
+            NameAndId planet;
+            PlanetItem curr;
             for (int i = 1; i < _count; i++)
             {
-                planets[i - 1] = _context.Planets.Find(i);
+                curr = _context.Planets.Find(i);
+                planet = new NameAndId();
+                if (curr != null)
+                {
+
+                    planet.name = curr.name;
+                    planet.id = curr.id;
+                    planets[i - 1] = planet;
+                }
             }
             return planets;
         }

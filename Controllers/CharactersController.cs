@@ -18,12 +18,22 @@ namespace starwars_browser_server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<CharacterItem[]> GetAll()
+        public ActionResult<NameAndId[]> GetAll()
         {
-            CharacterItem[] characters = new CharacterItem[_count];
+            NameAndId[] characters = new NameAndId[_count];
+            NameAndId character;
+            CharacterItem curr;
             for (int i = 1; i < _count; i++)
             {
-                characters[i - 1] = _context.Characters.Find(i);
+                curr = _context.Characters.Find(i);
+                character = new NameAndId();
+                if (curr != null)
+                {
+
+                    character.name = curr.name;
+                    character.id = curr.id;
+                    characters[i - 1] = character;
+                }
             }
             return characters;
         }
