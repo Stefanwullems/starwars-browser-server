@@ -19,12 +19,22 @@ namespace starwars_browser_server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<FilmItem[]> GetFilms()
+        public ActionResult<NameAndId[]> GetFilms()
         {
-            FilmItem[] films = new FilmItem[_count];
-            for (int i = 1; i < _count; i++)
+            NameAndId[] films = new NameAndId[_count];
+            NameAndId film;
+            FilmItem curr;
+            for (int i = 1; i < _count + 1; i++)
             {
-                films[i - 1] = _context.Films.Find(i);
+                curr = _context.Films.Find(i);
+                film = new NameAndId();
+                if (curr != null)
+                {
+
+                    film.name = curr.title;
+                    film.id = curr.id;
+                    films[i - 1] = film;
+                }
             }
             return films;
         }
