@@ -23,7 +23,7 @@ namespace starwars_browser_server.Controllers
             NameAndId[] planets = new NameAndId[_count];
             NameAndId planet;
             PlanetItem curr;
-            for (int i = 1; i < _count; i++)
+            for (int i = 1; i < _count + 1; i++)
             {
                 curr = _context.Planets.Find(i);
                 planet = new NameAndId();

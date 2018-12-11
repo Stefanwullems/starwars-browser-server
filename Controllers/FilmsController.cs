@@ -24,7 +24,7 @@ namespace starwars_browser_server.Controllers
             NameAndId[] films = new NameAndId[_count];
             NameAndId film;
             FilmItem curr;
-            for (int i = 1; i < _count; i++)
+            for (int i = 1; i < _count + 1; i++)
             {
                 curr = _context.Films.Find(i);
                 film = new NameAndId();
