@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using starwars_browser_server.Models;
-using starwars_browser_server.Requests;
+
 
 namespace starwars_browser_server.Controllers
 {
@@ -11,9 +11,21 @@ namespace starwars_browser_server.Controllers
     {
 
         private readonly PlanetContext _context;
+        private readonly int _count = 61;
         public PlanetsController(PlanetContext context)
         {
             _context = context;
+        }
+
+        [HttpGet]
+        public ActionResult<PlanetItem[]> GetAll()
+        {
+            PlanetItem[] planets = new PlanetItem[_count];
+            for (int i = 1; i < _count; i++)
+            {
+                planets[i - 1] = _context.Planets.Find(i);
+            }
+            return planets;
         }
 
         [HttpGet("{id}")]
@@ -26,5 +38,7 @@ namespace starwars_browser_server.Controllers
             }
             return planet;
         }
+
+
     }
 }
