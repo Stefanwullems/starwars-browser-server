@@ -12,3 +12,17 @@
 /home/stefan/Dev/personal/starwars-browser/starwars-browser-server/obj/Debug/netcoreapp2.1/starwars-browser-server.RazorTargetAssemblyInfo.cache
 /home/stefan/Dev/personal/starwars-browser/starwars-browser-server/obj/Debug/netcoreapp2.1/starwars-browser-server.dll
 /home/stefan/Dev/personal/starwars-browser/starwars-browser-server/obj/Debug/netcoreapp2.1/starwars-browser-server.pdb
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/bin/Debug/netcoreapp2.1/starwars-browser-server.deps.json
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/bin/Debug/netcoreapp2.1/starwars-browser-server.runtimeconfig.json
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/bin/Debug/netcoreapp2.1/starwars-browser-server.runtimeconfig.dev.json
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/bin/Debug/netcoreapp2.1/starwars-browser-server.dll
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/bin/Debug/netcoreapp2.1/starwars-browser-server.pdb
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/obj/Debug/netcoreapp2.1/starwars-browser-server.csprojAssemblyReference.cache
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/obj/Debug/netcoreapp2.1/starwars-browser-server.csproj.CoreCompileInputs.cache
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/obj/Debug/netcoreapp2.1/starwars-browser-server.RazorAssemblyInfo.cache
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/obj/Debug/netcoreapp2.1/starwars-browser-server.RazorAssemblyInfo.cs
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/obj/Debug/netcoreapp2.1/starwars-browser-server.AssemblyInfoInputs.cache
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/obj/Debug/netcoreapp2.1/starwars-browser-server.AssemblyInfo.cs
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/obj/Debug/netcoreapp2.1/starwars-browser-server.RazorTargetAssemblyInfo.cache
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/obj/Debug/netcoreapp2.1/starwars-browser-server.dll
+/home/stefan/Dev/FullStack/StarwarsBrowser/StarwarsBrowserServer/obj/Debug/netcoreapp2.1/starwars-browser-server.pdb
