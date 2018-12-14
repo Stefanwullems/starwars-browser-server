@@ -6,20 +6,14 @@ namespace starwarsbrowserserver.Migrations.Film
 {
     public partial class FetchFilm : Migration
     {
-
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            FilmRequest client = new FilmRequest();
-            for (int i = 1; i <= 7; i++) AddFilm(i, migrationBuilder, client);
+            for (int i = 1; i <= 7; i++) AddFilm(i, migrationBuilder, new GetRequest<FilmItem>("films"));
         }
 
-        private void AddFilm(int id, MigrationBuilder migrationBuilder, FilmRequest client)
+        private void AddFilm(int id, MigrationBuilder migrationBuilder, GetRequest<FilmItem> client)
         {
-            Console.Clear();
-            Console.WriteLine("Progress:" + id.ToString() + "/7");
-
             FilmItem film = client.GetById(id).GetAwaiter().GetResult();
-
             migrationBuilder.InsertData(
                 table: "Films",
             columns: new string[] { "id", "title", "opening_crawl", "director", "producer", "release_date", },
@@ -36,7 +30,6 @@ namespace starwarsbrowserserver.Migrations.Film
                 keyColumn: "id",
                 keyValues: new object[] { i }
                 );
-
             }
         }
     }

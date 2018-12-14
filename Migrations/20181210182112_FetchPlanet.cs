@@ -9,17 +9,12 @@ namespace starwarsbrowserserver.Migrations.Planet
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            PlanetRequest client = new PlanetRequest();
-            for (int i = 1; i <= 61; i++) AddPlanet(i, migrationBuilder, client);
+            for (int i = 1; i <= 61; i++) AddPlanet(i, migrationBuilder, new GetRequest<PlanetItem>("planets"));
         }
 
-        private void AddPlanet(int id, MigrationBuilder migrationBuilder, PlanetRequest client)
+        private void AddPlanet(int id, MigrationBuilder migrationBuilder, GetRequest<PlanetItem> client)
         {
-            Console.Clear();
-            Console.WriteLine("Progress:" + id.ToString() + "/61");
-
             PlanetItem planet = client.GetById(id).GetAwaiter().GetResult();
-
             migrationBuilder.InsertData(
                 table: "Planets",
             columns: new string[] { "id", "name", "climate", "rotation_period", "orbital_period", "diameter", "gravity", "terrain", "surface_water", "population" },
@@ -36,7 +31,6 @@ namespace starwarsbrowserserver.Migrations.Planet
                 keyColumn: "id",
                 keyValues: new object[] { i }
                 );
-
             }
         }
     }
