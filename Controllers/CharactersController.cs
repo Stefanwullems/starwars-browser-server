@@ -1,52 +1,29 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using starwars_browser_server.Models;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace starwars_browser_server.Controllers
 {
-
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CharactersController : ControllerBase
+    public class CharactersController : GenericController
     {
-        private readonly CharacterContext _context;
-        private readonly int _count = 87;
-        public CharactersController(CharacterContext context)
+        private readonly DbSet<CharacterItem> _repository;
+
+        public CharactersController(CharacterContext context) : base(count: 87)
         {
-            _context = context;
+            _repository = context.Characters;
         }
 
         [HttpGet]
-        public ActionResult<NameAndId[]> GetAll()
+        public ActionResult<NameAndId[]> GetCharacters()
         {
-            NameAndId[] characters = new NameAndId[_count];
-            NameAndId character;
-            CharacterItem curr;
-            for (int i = 1; i < _count + 1; i++)
-            {
-                curr = _context.Characters.Find(i);
-                character = new NameAndId();
-                if (curr != null)
-                {
-
-                    character.name = curr.name;
-                    character.id = curr.id;
-                    characters[i - 1] = character;
-                }
-            }
-            return characters;
+            return GetNamesAndIds<CharacterItem>(_repository);
         }
 
         [HttpGet("{id}")]
         public ActionResult<CharacterItem> GetCharacterById(int id)
         {
-            CharacterItem character = _context.Characters.Find(id);
-            if (character == null)
-            {
-                return NotFound();
-            }
-            return character;
+            return GetItemById<CharacterItem>(id: id, repository: _repository);
         }
     }
 }

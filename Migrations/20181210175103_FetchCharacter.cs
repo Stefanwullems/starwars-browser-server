@@ -9,16 +9,11 @@ namespace starwarsbrowserserver.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            CharacterRequest client = new CharacterRequest();
-            for (int i = 1; i <= 87; i++) AddCharacter(i, migrationBuilder, client);
+            for (int i = 1; i <= 87; i++) AddCharacter(i, migrationBuilder, new GetRequest<CharacterItem>("people"));
         }
 
-        private void AddCharacter(int id, MigrationBuilder migrationBuilder, CharacterRequest client)
+        private void AddCharacter(int id, MigrationBuilder migrationBuilder, GetRequest<CharacterItem> client)
         {
-
-            Console.Clear();
-            Console.WriteLine("Progress:" + id.ToString() + "/86");
-
             // 17 gives not found error
             CharacterItem character;
             if (id >= 17) character = client.GetById(id + 1).GetAwaiter().GetResult();

@@ -1,55 +1,29 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using starwars_browser_server.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace starwars_browser_server.Controllers
 {
-
-    [Route("api/[controller]")]
-    [ApiController]
-    public class FilmsController : ControllerBase
+    public class FilmsController : GenericController
     {
+        private readonly DbSet<FilmItem> _repository;
 
-        private readonly FilmContext _context;
-        private readonly int _count = 7;
-
-        public FilmsController(FilmContext context)
+        public FilmsController(FilmContext context) : base(count: 7)
         {
-            _context = context;
+            _repository = context.Films;
         }
 
         [HttpGet]
         public ActionResult<NameAndId[]> GetFilms()
         {
-            NameAndId[] films = new NameAndId[_count];
-            NameAndId film;
-            FilmItem curr;
-            for (int i = 1; i < _count + 1; i++)
-            {
-                curr = _context.Films.Find(i);
-                film = new NameAndId();
-                if (curr != null)
-                {
-
-                    film.name = curr.title;
-                    film.id = curr.id;
-                    films[i - 1] = film;
-                }
-            }
-            return films;
+            return GetTitlesAndIds<FilmItem>(_repository);
         }
 
         [HttpGet("{id}")]
         public ActionResult<FilmItem> GetFilmById(int id)
         {
-            FilmItem film = _context.Films.Find(id);
-            if (film == null)
-            {
-                return NotFound();
-            }
-            return film;
+            return GetItemById<FilmItem>(id: id, repository: _repository);
         }
-
-
     }
 }

@@ -1,9 +1,9 @@
 
 namespace starwars_browser_server.Models
 {
-    public class NameAndId
+    public class TitleAndId
     {
         public int id { get; set; }
-        public string name { get; set; }
+        public string title { get; set; }
     }
 }
