@@ -15,7 +15,7 @@ namespace starwars_browser_server.Requests
             _path = "https://swapi.co/api/" + endpoint;
         }
 
-        private HttpClient client = PreparedClient.GetClient();
+        private HttpClient client = PrepareClient();
 
         public async Task<TEntity> GetById(int id)
         {
@@ -37,5 +37,16 @@ namespace starwars_browser_server.Requests
             }
         }
 
+        public static HttpClient PrepareClient()
+        {
+            HttpClient client = new HttpClient();
+            // Update port # in the following line.
+            client.BaseAddress = new Uri("http://localhost:64195/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            return client;
+        }
     }
 }

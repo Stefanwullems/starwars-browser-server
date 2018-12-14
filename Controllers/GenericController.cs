@@ -5,11 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace starwars_browser_server.Controllers
 {
-    public interface IDBT<T>
-    {
-        T Find(int id);
-    }
-
+    [Route("api/[controller]")]
+    [ApiController]
     public class GenericController : ControllerBase
     {
 

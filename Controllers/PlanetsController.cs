@@ -3,12 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using starwars_browser_server.Models;
 using Microsoft.EntityFrameworkCore;
 
-
-
 namespace starwars_browser_server.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class PlanetsController : GenericController
     {
         private readonly DbSet<PlanetItem> _repository;

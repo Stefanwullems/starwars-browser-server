@@ -4,7 +4,6 @@ namespace starwars_browser_server.Models
 {
     public class CharacterItem : NameAndId
     {
-
         public string birth_year { get; set; }
         public string eye_color { get; set; }
         public string gender { get; set; }
@@ -22,10 +21,7 @@ namespace starwars_browser_server.Models
 
     public class CharacterContext : DbContext
     {
-        public CharacterContext(DbContextOptions<CharacterContext> options) : base(options)
-        {
-        }
+        public CharacterContext(DbContextOptions<CharacterContext> options) : base(options) { }
         public DbSet<CharacterItem> Characters { get; set; }
     }
-
 }

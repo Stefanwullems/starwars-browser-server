@@ -13,15 +13,11 @@ namespace starwars_browser_server.Models
         public string[] vehicles { get; set; }
         public string[] characters { get; set; }
         public string[] planets { get; set; }
-
-
     }
 
     public class FilmContext : DbContext
     {
-        public FilmContext(DbContextOptions<FilmContext> options) : base(options)
-        {
-        }
+        public FilmContext(DbContextOptions<FilmContext> options) : base(options) { }
         public DbSet<FilmItem> Films { get; set; }
     }
 }

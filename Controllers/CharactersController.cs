@@ -5,13 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace starwars_browser_server.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class CharactersController : GenericController
     {
         private readonly DbSet<CharacterItem> _repository;
 
-        public CharactersController(CharacterContext context) : base(count: 61)
+        public CharactersController(CharacterContext context) : base(count: 87)
         {
             _repository = context.Characters;
         }
