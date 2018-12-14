@@ -2,10 +2,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace starwars_browser_server.Models
 {
-    public class FilmItem
+    public class FilmItem : TitleAndId
     {
-        public int id { get; set; }
-        public string title { get; set; }
         public string opening_crawl { get; set; }
         public string director { get; set; }
         public string producer { get; set; }
@@ -16,8 +14,7 @@ namespace starwars_browser_server.Models
         public string[] characters { get; set; }
         public string[] planets { get; set; }
 
-        // for interface
-        public string name { get; set; }
+
     }
 
     public class FilmContext : DbContext
