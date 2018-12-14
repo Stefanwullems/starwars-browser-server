@@ -15,6 +15,9 @@ namespace starwars_browser_server.Models
         public string[] vehicles { get; set; }
         public string[] characters { get; set; }
         public string[] planets { get; set; }
+
+        // for interface
+        public string name { get; set; }
     }
 
     public class FilmContext : DbContext
