@@ -16,7 +16,6 @@ namespace starwars_browser_server.Models
         public string[] species { get; set; }
         public string[] starships { get; set; }
         public string[] vehicles { get; set; }
-        public string title { get; set; }
     }
 
     public class CharacterContext : DbContext
