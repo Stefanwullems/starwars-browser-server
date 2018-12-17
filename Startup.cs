@@ -37,7 +37,9 @@ namespace starwars_browser_server
             services.AddDbContext<VehicleContext>(options =>
             options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<StarshipContext>(options =>
-                        options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<SpeciesContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors();
