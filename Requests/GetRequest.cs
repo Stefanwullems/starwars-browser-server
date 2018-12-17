@@ -20,7 +20,7 @@ namespace starwars_browser_server.Requests
         public async Task<TEntity> GetById(int id)
         {
             TEntity entity = default(TEntity);
-            HttpResponseMessage res = await client.GetAsync(_path + id);
+            HttpResponseMessage res = await client.GetAsync(_path + "/" + id);
             try
             {
                 if (res.IsSuccessStatusCode)
